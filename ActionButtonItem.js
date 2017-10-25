@@ -107,12 +107,7 @@ export default class ActionButtonItem extends Component {
         style={[animatedViewStyle, parentStyle]}
       >
         <View>
-          <Touchable
-            background={touchableBackground(
-              this.props.nativeFeedbackRippleColor,
-              this.props.fixNativeFeedbackRadius
-            )}
-            activeOpacity={this.props.activeOpacity || DEFAULT_ACTIVE_OPACITY}
+          <TouchableWithoutFeedback
             onPress={this.props.onPress}
           >
             <View style={[
@@ -121,7 +116,7 @@ export default class ActionButtonItem extends Component {
             ]}>
               {this.props.children}
             </View>
-          </Touchable>
+          </TouchableWithoutFeedback>
         </View>
         {this._renderTitle()}
       </Animated.View>
